@@ -69,7 +69,7 @@ module.exports = class CompareHands {
     let [ranks, occurences] = this.rankOccurences(hand);
     let rankOfFours = ranks[occurences.indexOf(4)];
     if (!rankOfFours) { return 0; }
-    let mainScore = rankToPoint(rankOfFours);
+    let mainScore = this.rankToPoint(rankOfFours);
     let kickers = hand.cards.filter(({ rank }) => rank !== rankOfFours);
     return this.scoreWithKickers(mainScore, kickers);
   }
@@ -79,7 +79,7 @@ module.exports = class CompareHands {
     let rankOfThrees = ranks[occurences.indexOf(3)];
     let rankOfPair = ranks[occurences.indexOf(2)];
     if (!rankOfThrees || !rankOfPair) { return 0; }
-    return this.rankToPoint(rankOfThrees) * 100 + this.rankToPoint(rankOfPairs);
+    return this.rankToPoint(rankOfThrees) * 100 + this.rankToPoint(rankOfPair);
   }
 
   static isFlush(hand) {
