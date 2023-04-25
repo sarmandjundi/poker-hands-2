@@ -138,7 +138,7 @@ module.exports = class CompareHands {
     return this.scoreWithKickers(0, hand.cards);
   }
 
-  
+
   static getUniqueArray(array) {
     var a = array.concat();
     for (var i = 0; i < a.length; ++i) {
