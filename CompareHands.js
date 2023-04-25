@@ -137,5 +137,29 @@ module.exports = class CompareHands {
   static isHighestCard(hand) {
     return this.scoreWithKickers(0, hand.cards);
   }
+  static getUniqueArray(array) {
+    var a = array.concat();
+    for (var i = 0; i < a.length; ++i) {
+      for (var j = i + 1; j < a.length; ++j) {
+        if ((a[i].suit + a[i].rank) === (a[j].suit + a[j].rank))
+          a.splice(j--, 1);
+      }
+    }
+
+    return a;
+  }
+  static checkIfNotContainDouble(hand1, hand2) {
+    let allCards = this.getUniqueArray(hand1.cards.concat(hand2.cards))
+    if (allCards.length == (hand1.cards.length + hand2.cards.length)) {
+      return true
+    }
+
+    else {
+      return false
+    }
+
+  }
+
+
 
 }
