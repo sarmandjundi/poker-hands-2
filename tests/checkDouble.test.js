@@ -17,3 +17,8 @@ test('check that checkDouble returns falsy if does contain double cards', () => 
 
 });
 
+test('check that checkDouble returns falsy if does contain double cards', () => {
+  let hand1 = new Hand('♠5', '♦5', '♥9', '♣7', '♥9');
+  expect(CompareHands.checkIfNotContainDouble(hand1)).toBeFalsy();
+
+});

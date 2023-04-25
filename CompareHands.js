@@ -149,8 +149,18 @@ module.exports = class CompareHands {
     return a;
   }
   static checkIfNotContainDouble(hand1, hand2) {
-    let allCards = this.getUniqueArray(hand1.cards.concat(hand2.cards))
-    if (allCards.length == (hand1.cards.length + hand2.cards.length)) {
+    let allCards = hand1.cards
+    if (hand2 != null) {
+      allCards = this.getUniqueArray(allCards.concat(hand2.cards))
+
+    }
+    else {
+      allCards = this.getUniqueArray(allCards)
+    }
+    if ((hand2 == null) && (allCards.length == hand1.cards.length)) {
+      return true
+    }
+    else if ((hand2 != null) && (allCards.length == (hand1.cards.length + hand2.cards.length))) {
       return true
     }
 
