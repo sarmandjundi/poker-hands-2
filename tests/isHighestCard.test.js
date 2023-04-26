@@ -8,7 +8,6 @@ test('check that isHighestCard returns truthy', () => {
 });
 
 
-
 test('check that isHighestCard returns correct point value for a highest card hand', () => {
   let hand1 = new Hand('♥3', '♦9', '♣7', '♠5', '♣6')
   let hand2 = new Hand('♥3', '♦T', '♣7', '♠5', '♣6')

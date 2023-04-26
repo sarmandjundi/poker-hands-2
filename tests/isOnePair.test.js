@@ -18,3 +18,8 @@ test('check that isOnePair returns 0 for a non-one pair hand', () => {
   expect(result).toBe(expected);
 });
 
+test('check that isOnePair returns 0 if not one pair', () => {
+  let hand = new Hand('♣9', '♣8', '♥7', '♣6', '♣5');
+  expect(CompareHands.isOnePair(hand)).toBe(0);
+});
+

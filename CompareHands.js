@@ -169,9 +169,5 @@ module.exports = class CompareHands {
     else {
       return false
     }
-
   }
-
-
-
 }

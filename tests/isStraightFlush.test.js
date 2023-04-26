@@ -12,3 +12,7 @@ test('returns false for a non-straight flush hand', () => {
   expect(CompareHands.isStraightFlush(hand)).toBeFalsy();
 });
 
+test('check that isStraightFlush returns 0 if not straight', () => {
+  let hand = new Hand('♥4', '♦5', '♣7', '♥8', '♦2');
+  expect(CompareHands.isStraightFlush(hand)).toBe(0);
+});
