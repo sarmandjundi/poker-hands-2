@@ -23,3 +23,12 @@ test('check that isOnePair returns 0 if not one pair', () => {
   expect(CompareHands.isOnePair(hand)).toBe(0);
 });
 
+
+test('check that isOnePair returns highest score for the strongest one pair hand', () => {
+  let hand1 = new Hand('♥9', '♦9', '♣7', '♠5', '♣6');
+  let hand2 = new Hand('♥Q', '♦Q', '♣7', '♠5', '♣6');
+  let scoreHand1 = CompareHands.isOnePair(hand1);
+  let scoreHand2 = CompareHands.isOnePair(hand2);
+  expect(scoreHand2).toBeGreaterThan(scoreHand1);
+});
+
